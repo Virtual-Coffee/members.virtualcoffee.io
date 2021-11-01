@@ -49,7 +49,7 @@ const successView = (
 						!
 					</p>
 					<p className="mt-4">
-						<Button size="lg" href="/dashboard">
+						<Button size="lg" href="/">
 							Go to Dashboard
 						</Button>
 					</p>
