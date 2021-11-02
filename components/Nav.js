@@ -23,7 +23,7 @@ const userNavigation = [
 ]
 
 const navigation = [
-	{ name: 'Members Home Base', href: '/' },
+	{ name: 'Dashboard', href: '/' },
 	{
 		name: 'Resources',
 		href: 'https://virtualcoffee.io/resources',
@@ -33,12 +33,6 @@ const navigation = [
 	{
 		name: 'Discussions',
 		href: 'https://github.com/Virtual-Coffee/virtualcoffee.io/discussions',
-		target: '_blank',
-		rel: 'nofollow',
-	},
-	{
-		name: 'Code of Conduct',
-		href: 'https://virtualcoffee.io/code-of-conduct',
 		target: '_blank',
 		rel: 'nofollow',
 	},
@@ -80,7 +74,7 @@ export default function Nav() {
 											alt="Virtual Coffee"
 										/>
 									</div>
-									<div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+									<div className="hidden md:-my-px md:ml-6 md:flex md:space-x-8">
 										{navigation.map(({ name, authOnly, href, ...rest }) => {
 											if (authOnly && sessionStatus !== 'authenticated') {
 												return null
@@ -107,7 +101,7 @@ export default function Nav() {
 										})}
 									</div>
 								</div>
-								<div className="hidden sm:ml-6 sm:flex sm:items-center">
+								<div className="hidden md:ml-6 md:flex md:items-center">
 									{/* Profile dropdown */}
 									<div className="ml-3 relative">
 										{sessionStatus === 'loading' && <div>Loading</div>}
@@ -163,7 +157,7 @@ export default function Nav() {
 										)}
 									</div>
 								</div>
-								<div className="-mr-2 flex items-center sm:hidden">
+								<div className="-mr-2 flex items-center md:hidden">
 									{/* Mobile menu button */}
 									<Disclosure.Button className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 										<span className="sr-only">Open main menu</span>
@@ -177,7 +171,7 @@ export default function Nav() {
 							</div>
 						</Container>
 
-						<Disclosure.Panel className="sm:hidden">
+						<Disclosure.Panel className="md:hidden">
 							<div className="pt-2 pb-3 space-y-1">
 								{navigation.map(({ name, current, href, ...rest }) => (
 									<Link href={href} key={name}>

@@ -38,7 +38,7 @@ export default function Page() {
 	}
 
 	return (
-		<Layout title="VC Hacktoberfest Dashboard">
+		<Layout title="Monthly Challenges">
 			<Container>
 				<h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
 					Virtual Coffee Monthly Challenges
@@ -105,8 +105,11 @@ export default function Page() {
 								<CardListItemKey>Current Challenge</CardListItemKey>
 								<CardListItemValue>
 									<strong>November, 2021: NaNoWriMo!</strong> This month we're
-									working together to blog 50,000 words! Based off the
-									<a href="https://nanowrimo.org/">
+									working together to blog 50,000 words! Based off the{' '}
+									<a
+										href="https://nanowrimo.org/"
+										className="text-indigo-600 hover:text-indigo-900 hover:underline"
+									>
 										NaNoWriMo (National Novel Writing Month) Challenge
 									</a>
 									, we'll be doing the tech take on writing and working together

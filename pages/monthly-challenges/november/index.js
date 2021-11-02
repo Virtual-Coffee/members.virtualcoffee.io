@@ -127,7 +127,7 @@ export default function Page() {
 													Date
 												</th>
 												<th scope="col" className="relative px-6 py-3">
-													<span className="sr-only">Edit</span>
+													<span className="sr-only">Update</span>
 												</th>
 											</tr>
 										</thead>
@@ -141,7 +141,12 @@ export default function Page() {
 														}
 													>
 														<td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-															<a href={article.Url}>{article.Title}</a>
+															<a
+																href={article.Url}
+																className="text-indigo-600 hover:text-indigo-900 hover:underline"
+															>
+																{article.Title}
+															</a>
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
 															{article['Word Count']}
@@ -150,12 +155,13 @@ export default function Page() {
 															{article['Date Published']}
 														</td>
 														<td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-															<a
+															<Link
 																href={`/monthly-challenges/november/${article.id}`}
-																className="text-indigo-600 hover:text-indigo-900"
 															>
-																Edit
-															</a>
+																<a className="text-indigo-600 hover:text-indigo-900">
+																	Update
+																</a>
+															</Link>
 														</td>
 													</tr>
 												)

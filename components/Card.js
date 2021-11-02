@@ -52,7 +52,7 @@ export function CardHeaderHeader({ title, description }) {
 	return (
 		<div className="ml-4 mt-4">
 			<h3 className="text-lg leading-6 font-medium text-gray-900">{title}</h3>
-			<p className="mt-1 text-sm text-gray-500">{description}</p>
+			<div className="mt-1 text-sm text-gray-500">{description}</div>
 		</div>
 	)
 }

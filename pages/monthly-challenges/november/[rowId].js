@@ -60,8 +60,6 @@ export default function Page() {
 		{ enabled: sessionStatus === 'authenticated' }
 	)
 
-	console.log({ previousFormSubmission })
-
 	if (sessionStatus === 'loading') {
 		return null
 	}
@@ -70,8 +68,12 @@ export default function Page() {
 		return <NoAuth />
 	}
 
-	if (!(previousFormSubmission.isSuccess || previousFormSubmission.isError)) {
-		return null
+	if (previousFormSubmission.isLoading) {
+		return (
+			<FormLayout title="November Monthly Challenge">
+				<p className="mt-4 text-lg leading-6 text-gray-500">Loading...</p>
+			</FormLayout>
+		)
 	}
 
 	if (!previousFormSubmission.data || previousFormSubmission.isError) {

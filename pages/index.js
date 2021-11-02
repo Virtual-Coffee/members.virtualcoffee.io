@@ -73,8 +73,11 @@ export default function Page() {
 								<CardListItemKey>Current Challenge</CardListItemKey>
 								<CardListItemValue>
 									<strong>November, 2021: NaNoWriMo!</strong> This month we're
-									working together to blog 50,000 words! Based off the
-									<a href="https://nanowrimo.org/">
+									working together to blog 50,000 words! Based off the{' '}
+									<a
+										href="https://nanowrimo.org/"
+										className="text-indigo-600 hover:text-indigo-900 hover:underline"
+									>
 										NaNoWriMo (National Novel Writing Month) Challenge
 									</a>
 									, we'll be doing the tech take on writing and working together
