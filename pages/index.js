@@ -37,6 +37,17 @@ export default function Page() {
 		)
 	}
 
+	const profileValues = {
+		Name: session?.profile?.Name || session?.githubUser.name || undefined,
+		GitHubUsername:
+			session?.profile?.Username || session?.githubUser?.login || undefined,
+		TwitterUsername: session?.profile?.['TwitterUsername'] || undefined,
+		Pronouns: session?.profile?.Pronouns || undefined,
+		Email: session?.profile?.Email || session?.githubUser?.email || undefined,
+		IsMember: session?.profile?.IsMember || undefined,
+		AllowSocialSharing: session?.profile?.AllowSocialSharing || undefined,
+	}
+
 	return (
 		<Layout title="VC Hacktoberfest Dashboard">
 			<Container>
@@ -45,6 +56,86 @@ export default function Page() {
 				</h1>
 				<p className="mt-4 mb-8 text-lg leading-6 text-gray-500">Yay!</p>
 				<div className="space-y-12">
+					<Card>
+						<CardHeader>
+							<CardHeaderHeader
+								title="Member Profile"
+								description="Update your Virtual Coffee Member Profile so we can know more about you!"
+							/>
+							<CardHeaderActions>
+								<Button size="md" href="/monthly-challenges">
+									Update your Profile
+								</Button>
+							</CardHeaderActions>
+						</CardHeader>
+						<CardList>
+							<CardListItem>
+								<CardListItemKey>Name</CardListItemKey>
+								<CardListItemValue>
+									{profileValues.Name ? (
+										<strong>{profileValues.Name}</strong>
+									) : (
+										<em>Not set</em>
+									)}
+								</CardListItemValue>
+							</CardListItem>
+							<CardListItem>
+								<CardListItemKey>Pronouns</CardListItemKey>
+								<CardListItemValue>
+									{profileValues.Pronouns ? (
+										<strong>{profileValues.Pronouns}</strong>
+									) : (
+										<em>Not set</em>
+									)}
+								</CardListItemValue>
+							</CardListItem>
+							<CardListItem>
+								<CardListItemKey>Email</CardListItemKey>
+								<CardListItemValue>
+									{profileValues.Email ? (
+										<strong>{profileValues.Email}</strong>
+									) : (
+										<em>Not set</em>
+									)}
+								</CardListItemValue>
+							</CardListItem>
+							<CardListItem>
+								<CardListItemKey>GitHub Username</CardListItemKey>
+								<CardListItemValue>
+									{profileValues.GitHubUsername ? (
+										<strong>{profileValues.GitHubUsername}</strong>
+									) : (
+										<em>Not set</em>
+									)}
+								</CardListItemValue>
+							</CardListItem>
+							<CardListItem>
+								<CardListItemKey>Twitter Username</CardListItemKey>
+								<CardListItemValue>
+									{profileValues.TwitterUsername ? (
+										<strong>{profileValues.TwitterUsername}</strong>
+									) : (
+										<em>Not set</em>
+									)}
+								</CardListItemValue>
+							</CardListItem>
+							<CardListItem>
+								<CardListItemKey>Social Sharing Consent</CardListItemKey>
+								<CardListItemValue>
+									<div className="text-sm font-medium text-gray-500">
+										Are you comfortable with Virtual Coffee highlighting (with
+										consent) your project/contributions on Social Media?
+										(Twitter, Instagram)
+									</div>
+									{profileValues.AllowSocialSharing ? (
+										<strong>{profileValues.AllowSocialSharing}</strong>
+									) : (
+										<em>Not set</em>
+									)}
+								</CardListItemValue>
+							</CardListItem>
+						</CardList>
+					</Card>
 					<Card>
 						<CardHeader>
 							<CardHeaderHeader
