@@ -151,6 +151,34 @@ export function Field({ field, values }) {
 				/>
 			)
 
+		case 'Date':
+			return (
+				<FieldGroup id={field.name} label={`${field.label}:`} help={field.help}>
+					<input
+						name={field.name}
+						type={'date'}
+						required={!!field.required}
+						id={field.name}
+						className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+						defaultValue={values[field.name]}
+					/>
+				</FieldGroup>
+			)
+
+		case 'Number':
+			return (
+				<FieldGroup id={field.name} label={`${field.label}:`} help={field.help}>
+					<input
+						name={field.name}
+						type={'number'}
+						required={!!field.required}
+						id={field.name}
+						className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+						defaultValue={values[field.name]}
+					/>
+				</FieldGroup>
+			)
+
 		default:
 			return null
 	}
@@ -358,6 +386,9 @@ export default function Form({
 	formKey,
 	fieldsetLegend,
 	formFooter = null,
+	apiPath,
+	onSuccess,
+	method = 'POST',
 }) {
 	const [state, dispatch] = useReducer(
 		reducer,
@@ -369,7 +400,7 @@ export default function Form({
 		},
 		createInitialState
 	)
-	// console.log({ state })
+	console.log({ state })
 
 	useEffect(() => {
 		if (state.status === 'error') {
@@ -396,8 +427,8 @@ export default function Form({
 			dispatch({ type: 'submit', fields: formJson })
 
 			try {
-				const result = await fetch(`/api/forms/${formKey}`, {
-					method: 'POST',
+				const result = await fetch(`/api/forms/${apiPath || formKey}`, {
+					method,
 					body: JSON.stringify(formJson),
 					headers: {
 						'Content-Type': 'application/json',
@@ -407,6 +438,9 @@ export default function Form({
 
 				const json = await result.json()
 				dispatch({ type: 'finish', status: result.status, ...json })
+				if (onSuccess) {
+					onSuccess(json)
+				}
 				// console.log({ status: result.status, json })
 			} catch (error) {
 				// console.log({ error })
@@ -435,14 +469,14 @@ export default function Form({
 					onSubmit={onSubmit}
 				>
 					<div className="space-y-8 divide-y divide-gray-200">
-						<FieldSet
+						{/* <FieldSet
 							legend="Your Personal Information"
 							disabled={state.status === 'loading'}
 						>
 							{formData.profile.map((field) => (
 								<Field key={field.name} values={state.fields} field={field} />
 							))}
-						</FieldSet>
+						</FieldSet> */}
 
 						<FieldSet
 							legend={fieldsetLegend}
@@ -476,10 +510,6 @@ export default function Form({
 							{formFooter}
 
 							<div className="mt-8 border-t border-gray-200 pt-12">
-								<p className="mb-12 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-									Thank you for showing interest in the Virtual Coffee Hacktober
-									Initiative!
-								</p>
 								<div>
 									<Button
 										size="lg"
@@ -491,7 +521,7 @@ export default function Form({
 											? 'Loading...'
 											: previousFormSubmission
 											? 'Save'
-											: 'Sign Up!'}
+											: 'Submit'}
 									</Button>
 								</div>
 							</div>

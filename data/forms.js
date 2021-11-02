@@ -46,6 +46,37 @@ export const profile = [
 	},
 ]
 
+export const monthlyChallengeNovember = [
+	{
+		name: 'Title',
+		type: 'Text',
+		label: 'Article Title',
+		help: 'Required',
+		required: true,
+	},
+	{
+		name: 'Url',
+		type: 'URL',
+		label: 'Article URL',
+		help: 'Required',
+		required: true,
+	},
+	{
+		name: 'Word Count',
+		type: 'Number',
+		label: 'Word Count',
+		help: 'Required',
+		required: true,
+	},
+	{
+		name: 'Date Published',
+		type: 'Date',
+		label: 'Date Published',
+		help: 'Required',
+		required: true,
+	},
+]
+
 export const contributors = [
 	{
 		name: 'OssExperience',

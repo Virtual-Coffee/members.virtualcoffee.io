@@ -76,6 +76,30 @@ export async function updateUserProfile(auth_id, profile_id, fields) {
 	return results
 }
 
+export async function findMonthlyChallengeDataNovember(auth_id) {
+	const findResults = await base('member_articles')
+		.select({
+			filterByFormula: `{auth_id}='${auth_id}'`,
+		})
+		.all()
+
+	return findResults.map((row) => row.fields)
+}
+
+export async function findMonthlyChallengeDataRowNovember(auth_id, rowId) {
+	const findResults = await base('member_articles')
+		.select({
+			filterByFormula: `AND({auth_id}='${auth_id}',{id}='${rowId}')`,
+		})
+		.firstPage()
+
+	if (findResults && findResults.length) {
+		return findResults[0]
+	}
+
+	return null
+}
+
 export async function findFormResult(auth_id, formKey) {
 	const table = TABLES[formKey]
 	if (!table) {
@@ -130,6 +154,60 @@ export async function createOrUpdateForm(auth_id, formKey, fields) {
 	const previousResult = await findFormResult(auth_id, formKey)
 
 	if (previousResult) {
+		return await base(table).update(previousResult.id, values)
+	} else {
+		return await base(table).create({
+			...values,
+			member: [auth_id],
+		})
+	}
+}
+
+export async function createOrUpdateMemberArticle(auth_id, fields, articleId) {
+	const table = 'member_articles'
+
+	const values = formData.monthlyChallengeNovember.reduce((vals, field) => {
+		switch (field.type) {
+			case 'Number':
+				return {
+					...vals,
+					[field.name]: !isNaN(parseInt(fields[field.name]))
+						? parseInt(fields[field.name])
+						: null,
+				}
+
+			case 'Text':
+			case 'URL':
+			case 'Date':
+			case 'Single select':
+			case 'Multiple select':
+			case 'Long text':
+				return {
+					...vals,
+					[field.name]: fields[field.name],
+					...(field.otherFieldName
+						? { [field.otherFieldName]: fields[field.otherFieldName] }
+						: {}),
+				}
+
+			case 'Checkbox':
+				const parsedVal = `${fields[field.name]}`.toLowerCase()
+				return {
+					...vals,
+					[field.name]:
+						parsedVal === 'on' || parsedVal === 'yes' || parsedVal === 'true',
+				}
+
+			default:
+				return vals
+		}
+	}, {})
+
+	if (articleId) {
+		const previousResult = await findMonthlyChallengeDataRowNovember(
+			auth_id,
+			articleId
+		)
 		return await base(table).update(previousResult.id, values)
 	} else {
 		return await base(table).create({
