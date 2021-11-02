@@ -9,7 +9,7 @@ import Container from './Container'
 import { useRouter } from 'next/router'
 
 const userNavigation = [
-	{ name: 'Dashboard', props: { href: '/' } },
+	{ name: 'Profile', props: { href: '/profile' } },
 	{
 		name: 'Sign out',
 		props: {
@@ -24,9 +24,13 @@ const userNavigation = [
 
 const navigation = [
 	{ name: 'Members Home Base', href: '/' },
-	{ name: 'FAQ', href: '/#questions' },
-	{ name: 'Virtual Coffee', href: 'https://virtualcoffee.io' },
+	{ name: 'Resources', href: 'https://virtualcoffee.io/resources' },
+	{
+		name: 'Discussions',
+		href: 'https://github.com/Virtual-Coffee/virtualcoffee.io/discussions',
+	},
 	{ name: 'Code of Conduct', href: 'https://virtualcoffee.io/code-of-conduct' },
+	{ name: 'Virtual Coffee', href: 'https://virtualcoffee.io' },
 ]
 
 export default function Nav() {
