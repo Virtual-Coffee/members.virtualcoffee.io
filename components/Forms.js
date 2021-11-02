@@ -463,7 +463,7 @@ export default function Form({
 			<div className="mt-12">
 				<form
 					className="space-y-8 divide-y divide-gray-200"
-					action={`/api/forms/${formKey}`}
+					action={`/api/forms/${apiPath || formKey}`}
 					method="POST"
 					name={formKey}
 					onSubmit={onSubmit}
@@ -493,7 +493,9 @@ export default function Form({
 										className="form-checkbox"
 										name="agree"
 										required
-										defaultChecked={!!previousFormSubmission}
+										defaultChecked={
+											!!previousFormSubmission || formKey === 'profile'
+										}
 									/>
 									<span className="ml-2">
 										By selecting this, I agree to abide by the{' '}

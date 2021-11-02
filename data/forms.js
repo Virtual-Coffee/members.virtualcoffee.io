@@ -31,12 +31,12 @@ export const profile = [
 		type: 'Text',
 		label: 'Pronouns',
 	},
-	{
-		name: 'IsMember',
-		type: 'Single select',
-		possibleValues: ['Yes', 'No'],
-		label: 'Are you a current Virtual Coffee Member?',
-	},
+	// {
+	// 	name: 'IsMember',
+	// 	type: 'Single select',
+	// 	possibleValues: ['Yes', 'No'],
+	// 	label: 'Are you a current Virtual Coffee Member?',
+	// },
 	{
 		name: 'AllowSocialSharing',
 		type: 'Single select',
