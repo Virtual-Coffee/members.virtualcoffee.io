@@ -55,11 +55,11 @@ export default function Page() {
 				</h1>
 				<p className="mt-4 text-lg leading-6 text-gray-500">
 					Any writing that was published in November 2021 will count towards our
-					goal!
+					goal.
 				</p>
 			</div>
 
-			{articlesResponse.data.results.length && (
+			{articlesResponse.data.results.length > 0 ? (
 				<>
 					<div className="px-4 py-5 sm:px-6">
 						<h3 className="text-lg font-medium text-gray-900">
@@ -131,16 +131,23 @@ export default function Page() {
 							</div>
 						</div>
 					</div>
+					<div className="text-lg leading-6 text-gray-500">
+						<p className="mt-4">
+							<Button size="lg" href="/monthly-challenges/november/new">
+								Add New Post!
+							</Button>
+						</p>
+					</div>
 				</>
+			) : (
+				<div className="text-lg leading-6 text-gray-500">
+					<p className="mt-4 text-center">
+						<Button size="lg" href="/monthly-challenges/november/new">
+							Add Your First Post!
+						</Button>
+					</p>
+				</div>
 			)}
-
-			<div className="text-lg leading-6 text-gray-500">
-				<p className="mt-4">
-					<Button size="lg" href="/monthly-challenges/november/new">
-						Add New Post!
-					</Button>
-				</p>
-			</div>
 		</FormLayout>
 	)
 }

@@ -15,7 +15,10 @@ const intro = (
 			<h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
 				Add your blog posts!
 			</h1>
-			<p className="mt-4 text-lg leading-6 text-gray-500">text goes here</p>
+			<p className="mt-4 text-lg leading-6 text-gray-500">
+				Any writing that was published in November 2021 will count towards our
+				goal.
+			</p>
 		</div>
 	</>
 )
@@ -68,7 +71,11 @@ export default function Page() {
 	}
 
 	return (
-		<FormLayout title="November Monthly Challenge" description="YOLO">
+		<FormLayout
+			title="November Monthly Challenge"
+			description="Any writing that was published in November 2021 will count towards our
+		goal."
+		>
 			<Form
 				session={session}
 				errorMessage={error ? errorMessage : undefined}
