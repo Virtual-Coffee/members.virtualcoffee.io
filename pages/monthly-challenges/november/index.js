@@ -1,18 +1,11 @@
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
-import Form, { FormLayout } from '@/components/Forms'
+import { FormLayout } from '@/components/Forms'
 import SignIn from '@/components/SignIn'
 import { useQuery } from 'react-query'
 import Button from '@/components/Button'
 import { getMemberChallengeDataNovember } from '@/util/api'
-
-// Become a Contributor: Virtual Coffee Hacktoberfest Initiative
-
-{
-	/* <Head>
-			<title>Thank you for your interest!</title>
-		</Head> */
-}
+import Link from 'next/link'
 
 export function NoAuth() {
 	return (

@@ -4,8 +4,6 @@ import Form, { FormLayout } from '@/components/Forms'
 import Button from '@/components/Button'
 import { NoAuth } from './index'
 
-// Become a Contributor: Virtual Coffee Hacktoberfest Initiative
-
 const intro = (
 	<>
 		<div className="text-center">

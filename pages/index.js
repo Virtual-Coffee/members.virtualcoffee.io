@@ -23,12 +23,15 @@ export default function Page() {
 
 	if (sessionStatus === 'unauthenticated') {
 		return (
-			<Layout>
+			<Layout title="VC Members Home Base">
 				<Container>
 					<h1 className="text-center text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
 						Virtual Coffee:
 						<br className="xl:hidden" />
-						<span className="text-orange-500"> Members Home Base</span>
+						<span className="bg-clip-text text-transparent bg-gradient-to-br from-orange-600 to-pink-450">
+							{' '}
+							Members Home Base
+						</span>
 					</h1>
 
 					<SignIn />
@@ -49,10 +52,13 @@ export default function Page() {
 	}
 
 	return (
-		<Layout title="VC Hacktoberfest Dashboard">
+		<Layout title="VC Members Home Base">
 			<Container>
 				<h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-					Virtual Coffee Members Home Base
+					Virtual Coffee:{' '}
+					<span className="bg-clip-text text-transparent bg-gradient-to-br from-orange-600 to-pink-450">
+						Members Home Base
+					</span>
 				</h1>
 				<p className="mt-4 mb-8 text-lg leading-6 text-gray-500">Yay!</p>
 				<div className="space-y-12">

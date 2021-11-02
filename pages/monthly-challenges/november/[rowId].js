@@ -1,13 +1,10 @@
 import { useRouter } from 'next/router'
 import { useSession } from 'next-auth/react'
 import Form, { FormLayout } from '@/components/Forms'
-import SignIn from '@/components/SignIn'
 import { useQuery } from 'react-query'
 import Button from '@/components/Button'
 import { getMemberChallengeDataNovember } from '@/util/api'
 import { NoAuth } from '.'
-
-// Become a Contributor: Virtual Coffee Hacktoberfest Initiative
 
 const intro = (
 	<>

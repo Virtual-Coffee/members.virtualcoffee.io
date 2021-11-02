@@ -2,12 +2,12 @@
 	"name": "membersvirtualcoffeeio",
 	"version": "2.0.0",
 	"private": true,
-	"description": "Virtual Coffee Hacktoberfest Site",
-	"repository": "https://github.com/Virtual-Coffee/hacktoberfest.git",
+	"description": "Virtual Coffee Members Home Base",
+	"repository": "https://github.com/Virtual-Coffee/members.virtualcoffee.io.git",
 	"bugs": {
-		"url": "https://github.com/Virtual-Coffee/hacktoberfest/issues"
+		"url": "https://github.com/Virtual-Coffee/members.virtualcoffee.io/issues"
 	},
-	"homepage": "https://github.com/Virtual-Coffee/hacktoberfest",
+	"homepage": "https://github.com/Virtual-Coffee/members.virtualcoffee.io",
 	"main": "",
 	"scripts": {
 		"dev": "next",
