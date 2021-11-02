@@ -24,13 +24,30 @@ const userNavigation = [
 
 const navigation = [
 	{ name: 'Members Home Base', href: '/' },
-	{ name: 'Resources', href: 'https://virtualcoffee.io/resources' },
+	{
+		name: 'Resources',
+		href: 'https://virtualcoffee.io/resources',
+		target: '_blank',
+		rel: 'nofollow',
+	},
 	{
 		name: 'Discussions',
 		href: 'https://github.com/Virtual-Coffee/virtualcoffee.io/discussions',
+		target: '_blank',
+		rel: 'nofollow',
 	},
-	{ name: 'Code of Conduct', href: 'https://virtualcoffee.io/code-of-conduct' },
-	{ name: 'Virtual Coffee', href: 'https://virtualcoffee.io' },
+	{
+		name: 'Code of Conduct',
+		href: 'https://virtualcoffee.io/code-of-conduct',
+		target: '_blank',
+		rel: 'nofollow',
+	},
+	{
+		name: 'Virtual Coffee',
+		href: 'https://virtualcoffee.io',
+		target: '_blank',
+		rel: 'nofollow',
+	},
 ]
 
 export default function Nav() {

@@ -41,7 +41,7 @@ export function Card({ children }) {
 export function CardHeader({ children }) {
 	return (
 		<div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
-			<div className="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
+			<div className="-ml-4 -mt-4 flex justify-between items-start flex-wrap sm:flex-nowrap">
 				{children}
 			</div>
 		</div>
@@ -58,5 +58,9 @@ export function CardHeaderHeader({ title, description }) {
 }
 
 export function CardHeaderActions({ children }) {
-	return <div className="ml-4 mt-4 flex-shrink-0">{children}</div>
+	return (
+		<div className="ml-4 mt-4 flex-shrink-0 flex flex-col gap-4">
+			{children}
+		</div>
+	)
 }

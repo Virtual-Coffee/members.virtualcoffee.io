@@ -53,20 +53,50 @@ export default function Page() {
 							<CardHeaderHeader
 								title="November 2021: NaNoWriMo!"
 								description={
-									<>
-										This month we're working together to blog 50,000 words!
-										Based off the
-										<a href="https://nanowrimo.org/">
-											NanWriMo (National Novel Writing Month) Challenge
-										</a>
-										, we'll be doing the tech take on writing and working
-										together towards the goal while posting on our own blogs.
-									</>
+									<div className="prose">
+										<p>
+											📣 Challengers!!! It's November 1st and time for a new
+											challenge! Just like last year, this month's challenge
+											is **blogging**!
+										</p>
+										<p>
+											Last year our common goal was to reach 50k words during
+											the month and we didn't quite reach it, but there is no
+											doubt we will this year! The themes for blogging are up to
+											you, let's just try to keep a connection with the dev
+											world.
+										</p>
+										<p>
+											You can find a 
+											<a href="https://virtualcoffee.io/monthlychallenges/nov-2021/">
+												lot of ideas on the website
+											</a>
+											 to help you.
+										</p>
+										<p>
+											If you are new to blogging and need advice on the
+											platform, the style, the sharing part, have proofreading,
+											... our community is here to help. Use this channel 
+											<a href="https://virtual-coffee-group.slack.com/archives/C01GN2TLLC8">
+												<code>#content-creation</code>
+											</a>
+											 to post your questions, share your articles.
+										</p>
+										<p>Write a lot, write often! Good luck, and have fun!</p>
+									</div>
 								}
 							/>
 							<CardHeaderActions>
 								<Button size="md" href="/monthly-challenges/november">
 									Add your blog posts!
+								</Button>
+								<Button
+									size="md"
+									href="https://virtualcoffee.io/monthlychallenges/nov-2021/"
+									target="_blank"
+									rel="nofollow"
+								>
+									View Challenge Page
 								</Button>
 							</CardHeaderActions>
 						</CardHeader>
@@ -77,7 +107,7 @@ export default function Page() {
 									<strong>November, 2021: NaNoWriMo!</strong> This month we're
 									working together to blog 50,000 words! Based off the
 									<a href="https://nanowrimo.org/">
-										NanWriMo (National Novel Writing Month) Challenge
+										NaNoWriMo (National Novel Writing Month) Challenge
 									</a>
 									, we'll be doing the tech take on writing and working together
 									towards the goal while posting on our own blogs.

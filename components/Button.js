@@ -2,10 +2,11 @@ import Link from 'next/link'
 import classNames from '../util/classNames'
 
 const defaultClassName =
-	'inline-block border border-transparent leading-6 font-medium rounded-md focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
+	'font-semibold inline-block border border-transparent leading-6 rounded-md focus:outline-none focus:shadow-outline transition duration-150 ease-in-out'
 
 const colors = {
-	primary: 'text-orange-50 hover:text-white bg-orange-600 hover:bg-orange-500',
+	primary:
+		'text-white hover:text-white bg-orange-600 bg-gradient-to-br from-transparent to-pink-450 hover:bg-pink-450 transition duration-250 ease-in-out',
 	utility: 'text-orange-600 hover:text-orange-500 bg-gray-50 hover:bg-gray-50',
 }
 

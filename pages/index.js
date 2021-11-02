@@ -59,6 +59,33 @@ export default function Page() {
 					<Card>
 						<CardHeader>
 							<CardHeaderHeader
+								title="Monthly Challenges"
+								description="Every month we have a monthly challenge - here's the spot to participate!"
+							/>
+							<CardHeaderActions>
+								<Button size="md" href="/monthly-challenges">
+									Check out the Monthly Challenges!
+								</Button>
+							</CardHeaderActions>
+						</CardHeader>
+						<CardList>
+							<CardListItem>
+								<CardListItemKey>Current Challenge</CardListItemKey>
+								<CardListItemValue>
+									<strong>November, 2021: NaNoWriMo!</strong> This month we're
+									working together to blog 50,000 words! Based off the
+									<a href="https://nanowrimo.org/">
+										NaNoWriMo (National Novel Writing Month) Challenge
+									</a>
+									, we'll be doing the tech take on writing and working together
+									towards the goal while posting on our own blogs.
+								</CardListItemValue>
+							</CardListItem>
+						</CardList>
+					</Card>
+					<Card>
+						<CardHeader>
+							<CardHeaderHeader
 								title="Member Profile"
 								description="Update your Virtual Coffee Member Profile so we can know more about you!"
 							/>
@@ -132,33 +159,6 @@ export default function Page() {
 									) : (
 										<em>Not set</em>
 									)}
-								</CardListItemValue>
-							</CardListItem>
-						</CardList>
-					</Card>
-					<Card>
-						<CardHeader>
-							<CardHeaderHeader
-								title="Monthly Challenges"
-								description="Every month we have a monthly challenge - here's the spot to participate!"
-							/>
-							<CardHeaderActions>
-								<Button size="md" href="/monthly-challenges">
-									Check out the Monthly Challenges!
-								</Button>
-							</CardHeaderActions>
-						</CardHeader>
-						<CardList>
-							<CardListItem>
-								<CardListItemKey>Current Challenge</CardListItemKey>
-								<CardListItemValue>
-									<strong>November, 2021: NaNoWriMo!</strong> This month we're
-									working together to blog 50,000 words! Based off the
-									<a href="https://nanowrimo.org/">
-										NanWriMo (National Novel Writing Month) Challenge
-									</a>
-									, we'll be doing the tech take on writing and working together
-									towards the goal while posting on our own blogs.
 								</CardListItemValue>
 							</CardListItem>
 						</CardList>
