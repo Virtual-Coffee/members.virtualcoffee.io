@@ -118,7 +118,7 @@ export default NextAuth({
 		async session({ session, token, user }) {
 			// Add property to session, like an access_token from a provider.
 			session.githubUser = token.githubUser
-			console.log('finding profile')
+
 			const profile = await findOrCreateUserProfile(
 				token.auth_id,
 				token.githubUser

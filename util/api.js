@@ -13,7 +13,7 @@ export async function getContributorSubmission() {
 
 export async function getMemberChallengeDataNovember({ queryKey }) {
 	const id = queryKey[1]
-	console.log({ id })
+
 	const response = await fetch(
 		`/api/forms/monthly-challenges/november${id ? '/' + id : ''}`,
 		{

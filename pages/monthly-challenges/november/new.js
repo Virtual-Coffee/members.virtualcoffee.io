@@ -60,8 +60,6 @@ export default function Page() {
 		{ enabled: sessionStatus === 'authenticated' }
 	)
 
-	console.log({ articlesResponse })
-
 	if (sessionStatus === 'loading') {
 		return null
 	}

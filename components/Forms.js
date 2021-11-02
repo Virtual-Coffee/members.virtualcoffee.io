@@ -400,7 +400,6 @@ export default function Form({
 		},
 		createInitialState
 	)
-	console.log({ state })
 
 	useEffect(() => {
 		if (state.status === 'error') {

@@ -168,11 +168,3 @@ export default function Page() {
 		</Layout>
 	)
 }
-
-export async function getServerSideProps(context) {
-	const session = await getSession(context)
-	console.log(session)
-	return {
-		props: {},
-	}
-}
