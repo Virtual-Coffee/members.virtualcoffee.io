@@ -33,18 +33,12 @@ export default function Page() {
 		{ enabled: sessionStatus === 'authenticated' }
 	)
 
-	console.log({ articlesResponse })
-
 	if (sessionStatus === 'loading') {
 		return null
 	}
 
 	if (sessionStatus === 'unauthenticated') {
 		return <NoAuth />
-	}
-
-	if (!(articlesResponse.isSuccess || articlesResponse.isError)) {
-		return null
 	}
 
 	return (
@@ -93,7 +87,14 @@ export default function Page() {
 				</p>
 			</div>
 
-			{articlesResponse.data.results.length > 0 ? (
+			{!(articlesResponse.isSuccess || articlesResponse.isError) ? (
+				<div className="px-4 py-5 sm:px-6">Loading...</div>
+			) : articlesResponse.isError ? (
+				<div className="px-4 py-5 sm:px-6">
+					There was an error loading your data. Please try again (or DM Dan on
+					slack 😂)
+				</div>
+			) : articlesResponse.data.results.length > 0 ? (
 				<>
 					<div className="px-4 py-5 sm:px-6">
 						<h3 className="text-lg font-medium text-gray-900">
@@ -166,7 +167,7 @@ export default function Page() {
 						</div>
 					</div>
 					<div className="text-lg leading-6 text-gray-500">
-						<p className="mt-8 flex justify-between">
+						<p className="mt-8 flex flex-col sm:flex-row justify-between gap-4">
 							<Button size="md" href="/monthly-challenges/november/new">
 								Add New Post!
 							</Button>
