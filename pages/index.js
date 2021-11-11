@@ -99,7 +99,7 @@ export default function Page() {
 								description="Update your Virtual Coffee Member Profile so we can know more about you!"
 							/>
 							<CardHeaderActions>
-								<Button size="md" href="/monthly-challenges">
+								<Button size="md" href="/profile">
 									Update your Profile
 								</Button>
 							</CardHeaderActions>
