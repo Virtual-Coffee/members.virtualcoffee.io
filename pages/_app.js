@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }) {
 					name="viewport"
 					content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
 				/>
+				<link rel="shortcut icon" href="/favicon.ico" />
 			</Head>
 			<SessionProvider session={pageProps.session}>
 				<QueryClientProvider client={queryClient}>
